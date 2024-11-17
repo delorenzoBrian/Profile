@@ -5,6 +5,15 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    background-color: #1a1a1a;
+}
+
+/* Particles Background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 /* Container */
@@ -16,7 +25,7 @@ body {
 
 /* Header */
 header {
-    background: #444;
+    background: transparent;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -60,14 +69,15 @@ header nav ul li a:hover {
 /* Sections */
 .section {
     padding: 3rem 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #333;
     text-align: center;
+    color: #fff;
 }
 
 .section h2 {
     margin-bottom: 1rem;
     font-size: 2rem;
-    color: #444;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
@@ -78,7 +88,7 @@ header nav ul li a:hover {
     display: block;
     width: 60px;
     height: 3px;
-    background: #444;
+    background: #ffd700;
     margin: 1rem auto 0;
 }
 
@@ -92,9 +102,19 @@ header nav ul li a:hover {
     font-size: 1.1rem;
 }
 
+/* Profile Image */
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 20px 0;
+    border: 3px solid #ffd700;
+}
+
 /* Footer */
 footer {
-    background: #444;
+    background: transparent;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -109,24 +129,14 @@ footer {
 }
 
 #contact ul li a {
-    color: #444;
+    color: #ffd700;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 #contact ul li a:hover {
-    color: #ffd700;
-}
-
-/* Hover Effects */
-.section ul li strong {
-    color: #444;
-    font-weight: bold;
-}
-
-.section ul li strong:hover {
-    color: #ffd700;
+    color: #fff;
 }
 
 /* Responsive Design */

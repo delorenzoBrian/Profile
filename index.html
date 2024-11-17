@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian DeLorenzo Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
     <header>
         <div class="container">
             <h1>Brian DeLorenzo</h1>
@@ -25,6 +29,7 @@
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
+            <img src="images/profile.jpg" alt="Brian DeLorenzo" class="profile-img">
             <p>I am a junior at The College of New Jersey majoring in Computer Science. My goal is to pursue a career as a data analyst or software developer, leveraging my programming, problem-solving, and data analysis skills to create impactful solutions.</p>
         </div>
     </section>
@@ -70,5 +75,12 @@
             <p>&copy; 2024 Brian DeLorenzo. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Particles Initialization -->
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js loaded');
+        });
+    </script>
 </body>
 </html>
