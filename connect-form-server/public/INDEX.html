@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian DeLorenzo Portfolio</title>
+    <link rel="icon" href="images/pixil-frame-0 (3).png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="shooting-stars.js" defer></script>
+    <script src="/timeline-script"></script>
+    <script src="project-expand.js"></script>
+    <script src="/carousel-script"></script>
+</head>
+<body>
+    <!-- Starfield Background -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Main Section -->
+    <header id="main">
+        <div class="container">
+            <h1 class="main-title">Brian Paul DeLorenzo</h1>
+            <p class="static-text">Aspiring Software Developer</p>
+            <p id="dynamic-text"></p>
+        </div>
+    </header>    
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="nav-bar">
+        <!-- Left Section -->
+        <div class="nav-left">
+            <a href="#main">
+                <img src="images/pixil-frame-0 (3).png" alt="Home" class="nav-home-icon" />
+            </a>
+        </div>
+    
+        <!-- Center Section -->
+        <div class="nav-center">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#timeline">My Timeline</a></li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="#connect">Let's Connect</a></li>
+            </ul>
+        </div>
+    
+        <!-- Right Section -->
+        <div class="nav-right">
+            <a href="https://www.linkedin.com/in/brian-delorenzo-ab7304283/" target="_blank">
+                <img src="images/linkedin-icon.png" alt="LinkedIn" class="nav-icon" />
+            </a>
+            <a href="https://github.com/delorenzoBrian" target="_blank">
+                <img src="images/github-icon.png" alt="GitHub" class="nav-icon github-icon" />
+            </a>
+            <a href="https://cce.tcnj.edu/bonner-students/brian-delorenzo/" target="_blank">
+                <img src="images/bonner-icon.png" alt="Bonner" class="nav-icon" />
+            </a>
+        </div>
+    </nav>    
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/profile.jpg" alt="Brian DeLorenzo" />
+            </div>
+            <h2>About Me</h2>
+            <div class="about-text">
+                <p>
+                    I am a junior at The College of New Jersey majoring in Computer Science, with a strong passion for innovation, problem-solving, and crafting impactful technological solutions. My journey in technology has been shaped by hands-on experience in software development, data analysis, and web development, allowing me to combine creativity with technical expertise to tackle real-world challenges.
+                </p>
+                <p>
+                    With a focus on collaborative teamwork and adaptability, I excel in designing and implementing software solutions that prioritize user experience and efficiency. My skill set spans various programming languages, including Java, Python, and Ruby, as well as web development frameworks such as Ruby on Rails and database management systems like PostgreSQL.
+                </p>
+                <p>
+                    Beyond my technical capabilities, I am a proactive learner eager to stay at the forefront of emerging technologies, including quantum computing and advanced data analytics. As an aspiring software developer and data analyst, I strive to leverage my knowledge and skills to create meaningful contributions that positively impact organizations and communities.
+                </p>
+            </div>
+        </div>
+    </section>        
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section">
+        <div class="section-container">
+            <h2>My Timeline</h2>
+            <div class="vertical-timeline">
+                <!-- Event 1 -->
+                <div class="timeline-item left" onclick="toggleDetails(this)">
+                    <div class="icon">
+                        <img src="images/timeline-icon1.5.png" alt="Icon 1">
+                    </div>
+                    <div class="content">
+                        <h3>2022: Enrolled at The College of New Jersey</h3>
+                        <p class="timeline-summary">
+                            Began pursuing a Bachelor of Science in Computer Science, focusing on innovation and problem-solving in technology.
+                        </p>
+                        <p class="timeline-details">
+                            I started my journey at TCNJ with a focus on building technical skills in programming, data analysis, and web development, while engaging in leadership and campus initiatives.
+                        </p>
+                        <div class="expand-hint">
+                            Click to Expand <i class="arrow-icon">↓</i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="timeline-item right" onclick="toggleDetails(this)">
+                    <div class="icon">
+                        <img src="images/timeline-icon2.5.png" alt="Icon 2">
+                    </div>
+                    <div class="content">
+                        <h3>2022: Joined the Bonner Program</h3>
+                        <p class="timeline-summary">
+                            Committed to leadership, mentorship, and community engagement through service-learning initiatives.
+                        </p>
+                        <p class="timeline-details">
+                            I actively participated in service projects, mentoring high school students, and fostering community partnerships to address local challenges through innovative solutions.
+                        </p>
+                        <div class="expand-hint">
+                            Click to Expand <i class="arrow-icon">↓</i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 3 -->
+                <div class="timeline-item left" onclick="toggleDetails(this)">
+                    <div class="icon">
+                        <img src="images/timeline-icon3.png" alt="Icon 3">
+                    </div>
+                    <div class="content">
+                        <h3>2023: Academic Excellence in Software Development</h3>
+                        <p class="timeline-summary">
+                            Developed advanced skills in software engineering, web development, and data analytics through hands-on coursework and projects.
+                        </p>
+                        <p class="timeline-details">
+                            Worked on projects that included web applications, data visualization tools, and agile development methodologies to solve real-world problems efficiently.
+                        </p>
+                        <div class="expand-hint">
+                            Click to Expand <i class="arrow-icon">↓</i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 4 -->
+                <div class="timeline-item right" onclick="toggleDetails(this)">
+                    <div class="icon">
+                        <img src="images/timeline-icon4.png" alt="Icon 4">
+                    </div>
+                    <div class="content">
+                        <h3>2024: Software Development Intern at NAWCAD</h3>
+                        <p class="timeline-summary">
+                            Contributed to mission-critical projects for the U.S. Navy, specializing in efficient software solutions and system enhancements.
+                        </p>
+                        <p class="timeline-details">
+                            Enhanced operational efficiency by designing software to streamline military processes, employing mixed reality for simulation-based training programs.
+                        </p>
+                        <div class="expand-hint">
+                            Click to Expand <i class="arrow-icon">↓</i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 5 -->
+                <div class="timeline-item left" onclick="toggleDetails(this)">
+                    <div class="icon">
+                        <img src="images/timeline-icon5.png" alt="Icon 5">
+                    </div>
+                    <div class="content">
+                        <h3>2025: Beginning Algorithmic Research in Music Theory</h3>
+                        <p class="timeline-summary">
+                            Collaborating with faculty at TCNJ on computational approaches to musical theory and arrangement.
+                        </p>
+                        <p class="timeline-details">
+                            This research combines my passion for music and computer science, leveraging algorithms to analyze patterns and structures in music composition.
+                        </p>
+                        <div class="expand-hint">
+                            Click to Expand <i class="arrow-icon">↓</i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 6 -->
+                <div class="timeline-item right" onclick="toggleDetails(this)">
+                    <div class="icon">
+                        <img src="images/timeline-icon6.png" alt="Icon 6">
+                    </div>
+                    <div class="content">
+                        <h3>2026: Expected Graduation & Career Aspirations</h3>
+                        <p class="timeline-summary">
+                            Anticipated Bachelor’s degree in Computer Science with plans to pursue a career in software development and data analytics.
+                        </p>
+                        <p class="timeline-details">
+                            I aim to contribute to cutting-edge projects that blend software engineering, machine learning, and data-driven insights, making a positive impact in technology and beyond.
+                        </p>
+                        <div class="expand-hint">
+                            Click to Expand <i class="arrow-icon">↓</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="projects" class="section projects-container">
+        <div class="section-container">
+            <h2>My Projects</h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <img src="images/project-icon1.png" alt="Goat Breeding Database" class="project-icon">
+                        <h3>Goat Breeding Database Development</h3>
+                        <div class="project-details">
+                            <p><strong>Description:</strong> A Python and SQL-based database to track and manage American Range Goat breeding efficiently.</p>
+                            <p><strong>Skills Used:</strong> Python, SQL, Data Analysis, Database Management</p>
+                        </div>
+                    </div>
+    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <img src="images/project-icon2.png" alt="Mano's Architecture Computer" class="project-icon">
+                        <h3>Mano’s Architecture Computer Construction</h3>
+                        <div class="project-details">
+                            <p><strong>Description:</strong> Developed a computer simulation in LogicWorks implementing registers and logic gates.</p>
+                            <p><strong>Skills Used:</strong> Digital Logic, Circuit Design, LogicWorks</p>
+                        </div>
+                    </div>
+    
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <img src="images/project-icon3.png" alt="AVL Tree Sorter" class="project-icon">
+                        <h3>AVL Tree & Doubly Linked List Sorter</h3>
+                        <div class="project-details">
+                            <p><strong>Description:</strong> Created an efficient C++ sorting tool for organizing large datasets using AVL trees.</p>
+                            <p><strong>Skills Used:</strong> C++, Data Structures, Algorithms</p>
+                        </div>
+                    </div>
+    
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <img src="images/project-icon4.png" alt="Census Name Trend Analyzer" class="project-icon">
+                        <h3>Census Name Trend Analyzer</h3>
+                        <div class="project-details">
+                            <p><strong>Description:</strong> Built a Java application to analyze Social Security data on baby name popularity over time.</p>
+                            <p><strong>Skills Used:</strong> Java, Data Visualization, Social Security Data</p>
+                        </div>
+                    </div>
+    
+                    <!-- Project 5 -->
+                    <div class="project-card">
+                        <img src="images/project-icon5.png" alt="Portfolio Website" class="project-icon">
+                        <h3>Portfolio Website</h3>
+                        <div class="project-details">
+                            <p><strong>Description:</strong> A fully responsive website designed to showcase my projects using HTML, CSS, and JavaScript.</p>
+                            <p><strong>Skills Used:</strong> HTML, CSS, JavaScript, Web Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>        
+
+    <!-- Connect Section -->
+    <section id="connect" class="section connect container">
+        <div class="section-container">
+            <h2>Let's Connect.</h2>
+            <form id="connect-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Brian DeLorenzo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script to Handle Form Submission -->
+    <script>
+        const form = document.getElementById("connect-form");
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault(); // Prevent page reload
+
+            // Capture form data
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                message: form.message.value,
+            };
+
+            try {
+                // Make a POST request to the server
+                const response = await fetch("http://localhost:3000/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    alert("Form submitted successfully!");
+                    form.reset(); // Clear the form
+                } else {
+                    alert("Failed to submit the form. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            }
+        });
+    </script>
+
+    <!-- Dynamic Text Animation -->
+    <script>
+        const dynamicText = document.getElementById("dynamic-text");
+        const phrases = ["Innovator", "Problem Solver", "Team Player"];
+        let index = 0;
+
+        function updateDynamicText() {
+            dynamicText.textContent = phrases[index];
+            index = (index + 1) % phrases.length;
+        }
+
+        setInterval(updateDynamicText, 2000);
+        updateDynamicText();
+    </script>
+
+    <!-- Starfield Animation -->
+    <script>
+        const canvas = document.getElementById("starfield");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const stars = [];
+        const numStars = 200;
+
+        for (let i = 0; i < numStars; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2,
+                speed: Math.random() * 0.5 + 0.5,
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach((star) => {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = "#fff";
+                ctx.fill();
+                star.y += star.speed;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                    star.x = Math.random() * canvas.width;
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+    <script>
+        // JavaScript for Carousel Functionality
+        document.addEventListener("DOMContentLoaded", () => {
+            const carouselWrapper = document.querySelector(".carousel-wrapper");
+            const prevButton = document.querySelector(".carousel-btn.prev");
+            const nextButton = document.querySelector(".carousel-btn.next");
+
+            // Calculate the width of one project card
+            const cardWidth = document.querySelector(".project-card").offsetWidth + 16; // Include margin/gap
+
+            // Scroll to the next card
+            nextButton.addEventListener("click", () => {
+                carouselWrapper.scrollBy({ left: cardWidth, behavior: "smooth" });
+            });
+
+            // Scroll to the previous card
+            prevButton.addEventListener("click", () => {
+                carouselWrapper.scrollBy({ left: -cardWidth, behavior: "smooth" });
+            });
+
+            // Enable horizontal scrolling with mouse wheel
+            carouselWrapper.addEventListener("wheel", (event) => {
+                event.preventDefault();
+                carouselWrapper.scrollBy({ left: event.deltaY, behavior: "smooth" });
+            });
+        });
+    </script>
+        <script src="shooting-stars.js"></script>    
+</body>
+</html>
