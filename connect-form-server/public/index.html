@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="shooting-stars.js" defer></script>
-    <script src="/timeline-script"></script>
-    <script src="project-expand.js"></script>
-    <script src="/carousel-script"></script>
+    <script src="scripts/timeline-script.js" defer></script>
+    <script src="scripts/carousel-script.js" defer></script>
+    <script src="scripts/project-expand.js" defer></script>
 </head>
 <body>
     <!-- Starfield Background -->
@@ -287,41 +287,59 @@
         </div>
     </footer>
 
-    <!-- Script to Handle Form Submission -->
     <script>
-        const form = document.getElementById("connect-form");
-        form.addEventListener("submit", async (event) => {
-            event.preventDefault(); // Prevent page reload
-
-            // Capture form data
-            const formData = {
-                name: form.name.value,
-                email: form.email.value,
-                message: form.message.value,
-            };
-
-            try {
-                // Make a POST request to the server
-                const response = await fetch("http://localhost:3000/submit", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
-                });
-
-                if (response.ok) {
-                    alert("Form submitted successfully!");
-                    form.reset(); // Clear the form
-                } else {
-                    alert("Failed to submit the form. Please try again.");
-                }
-            } catch (error) {
-                console.error("Error:", error);
-                alert("An error occurred. Please try again.");
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("connect-form");
+    
+            if (!form) {
+                console.error("Error: Contact form not found on the page.");
+                return;
             }
+    
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault(); // Prevent default form submission
+    
+                // Capture form data
+                const formData = {
+                    name: form.name.value.trim(),
+                    email: form.email.value.trim(),
+                    message: form.message.value.trim(),
+                };
+    
+                // Validate required fields
+                if (!formData.name || !formData.email || !formData.message) {
+                    alert("Please fill in all fields before submitting.");
+                    return;
+                }
+    
+                // Determine the correct API endpoint dynamically
+                const baseURL = window.location.hostname.includes("localhost")
+                    ? "http://localhost:3000"
+                    : "https://profile-g5u2.onrender.com"; // Replace with your deployed backend URL
+    
+                try {
+                    // Make a POST request to the backend
+                    const response = await fetch(`${baseURL}/submit`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData),
+                    });
+    
+                    if (response.ok) {
+                        alert("Form submitted successfully!");
+                        form.reset(); // Clear form fields after successful submission
+                    } else {
+                        const errorMessage = await response.text();
+                        console.error("Server Error:", errorMessage);
+                        alert("Failed to submit the form. Please try again.");
+                    }
+                } catch (error) {
+                    console.error("Network Error:", error);
+                    alert("An error occurred. Please check your internet connection and try again.");
+                }
+            });
         });
-    </script>
+    </script>    
 
     <!-- Dynamic Text Animation -->
     <script>
