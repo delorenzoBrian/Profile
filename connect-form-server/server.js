@@ -97,8 +97,3 @@ LinkedIn: https://www.linkedin.com/in/brian-delorenzo-ab7304283/
         res.status(500).send("An error occurred.");
     }
 });
-
-// Start the server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
