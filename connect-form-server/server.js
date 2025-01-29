@@ -1,21 +1,27 @@
 // Import necessary modules
 require("dotenv").config(); // Load environment variables
 const express = require("express");
+const path = require("path"); // Ensure correct file paths
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use dynamic port for Render
 
 // Middleware to parse JSON-encoded body
 app.use(bodyParser.json());
 
-// Serve static files from the public folder
-app.use(express.static("public"));
+// Serve static files from the correct 'public' directory
+app.use(express.static(path.join(__dirname, "public")));
 
 // Default route to serve index.html
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(path.join(__dirname, "public", "index.html"), (err) => {
+        if (err) {
+            console.error("Error serving index.html:", err);
+            res.status(500).send("Error loading page.");
+        }
+    });
 });
 
 // Nodemailer transporter setup using environment variables
