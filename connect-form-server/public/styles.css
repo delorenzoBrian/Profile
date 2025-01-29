@@ -355,27 +355,34 @@ header .penguin-graphic {
 
 /* Content Box */
 .timeline-item .content {
-    background: linear-gradient(135deg, #222, #444); /* Consistent dark background */
+    background: linear-gradient(135deg, #222, #444);
     color: #fff;
     padding: 1.5rem 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
     width: 100%;
-    max-height: 600px;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
 }
 
-/* Expanded Timeline Content */
-.timeline-item.expanded .content {
-    background: linear-gradient(135deg, #2a2a2a, #555); /* Slightly lighter shade */
+/* Keep summary visible at all times */
+.timeline-item .timeline-summary {
+    display: block;
 }
 
-/* Expanded Explanation Text */
+/* Details initially hidden */
 .timeline-item .timeline-details {
-    color: #bbbbbb; /* Softer gray for easier reading */
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    padding-top: 0;
+}
+
+/* Expand smoothly when clicked */
+.timeline-item.expanded .timeline-details {
+    max-height: 300px;
+    opacity: 1;
+    padding-top: 1rem;
 }
 
 /* Expand Hint */
@@ -387,7 +394,6 @@ header .penguin-graphic {
     color: #ffd700;
     margin-top: 0.5rem;
     cursor: pointer;
-    visibility: visible;
 }
 
 /* Smooth rotation for the arrow icon */
