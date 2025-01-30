@@ -310,8 +310,8 @@
                     return;
                 }
 
-                // Set the correct API endpoint
-                const apiEndpoint = `${window.location.origin}/api/submit`;
+                // Use your correct Vercel API endpoint
+                const apiEndpoint = "/api/submit"; // Vercel auto-routes API files
 
                 try {
                     const response = await fetch(apiEndpoint, {
@@ -334,7 +334,6 @@
                 }
             });
         });
-
     </script>       
 
     <!-- Dynamic Text Animation -->
