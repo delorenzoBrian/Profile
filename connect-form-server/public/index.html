@@ -290,43 +290,39 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById("connect-form");
-    
+
             if (!form) {
                 console.error("Error: Contact form not found on the page.");
                 return;
             }
-    
+
             form.addEventListener("submit", async (event) => {
                 event.preventDefault(); // Prevent default form submission
-    
-                // Capture form data
+
                 const formData = {
                     name: form.name.value.trim(),
                     email: form.email.value.trim(),
                     message: form.message.value.trim(),
                 };
-    
-                // Validate required fields
+
                 if (!formData.name || !formData.email || !formData.message) {
                     alert("Please fill in all fields before submitting.");
                     return;
                 }
-    
-                // Determine the correct API endpoint dynamically for Vercel
-                const baseURL = window.location.origin; // This ensures it works on localhost & Vercel
-                const apiEndpoint = `${baseURL}/api/submit`;
-    
+
+                // Set the correct API endpoint
+                const apiEndpoint = `${window.location.origin}/api/submit`;
+
                 try {
-                    // Make a POST request to the backend
                     const response = await fetch(apiEndpoint, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(formData),
                     });
-    
+
                     if (response.ok) {
                         alert("Form submitted successfully!");
-                        form.reset(); // Clear form fields after successful submission
+                        form.reset();
                     } else {
                         const errorMessage = await response.text();
                         console.error("Server Error:", errorMessage);
@@ -338,6 +334,7 @@
                 }
             });
         });
+
     </script>       
 
     <!-- Dynamic Text Animation -->
