@@ -312,14 +312,13 @@
                     return;
                 }
     
-                // Determine the correct API endpoint dynamically
-                const baseURL = window.location.hostname.includes("localhost")
-                    ? "http://localhost:3000"
-                    : "https://profile-g5u2.onrender.com"; // Replace with your deployed backend URL
+                // Determine the correct API endpoint dynamically for Vercel
+                const baseURL = window.location.origin; // This ensures it works on localhost & Vercel
+                const apiEndpoint = `${baseURL}/api/submit`;
     
                 try {
                     // Make a POST request to the backend
-                    const response = await fetch(`${baseURL}/submit`, {
+                    const response = await fetch(apiEndpoint, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(formData),
@@ -339,7 +338,7 @@
                 }
             });
         });
-    </script>    
+    </script>       
 
     <!-- Dynamic Text Animation -->
     <script>
