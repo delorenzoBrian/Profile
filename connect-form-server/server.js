@@ -9,9 +9,8 @@ const cors = require("cors"); // Allows cross-origin requests
 const app = express();
 const port = process.env.PORT || 3000; // Use dynamic port for deployment
 
-// Enable CORS for frontend requests (adjust origin for security)
 app.use(cors({
-    origin: "*", // Change this to your frontend URL in production for security
+    origin: "https://profile-eosin-rho.vercel.app", 
     methods: ["POST", "GET"],
     allowedHeaders: ["Content-Type"]
 }));
