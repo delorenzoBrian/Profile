@@ -420,43 +420,5 @@
         });
     </script>
         <script src="shooting-stars.js"></script>    
-
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const timelineItems = document.querySelectorAll(".timeline-item");
-        
-                timelineItems.forEach((item) => {
-                    const expandHint = item.querySelector(".expand-hint");
-                    const content = item.querySelector(".content");
-        
-                    // Ensure all content starts collapsed
-                    content.style.maxHeight = "0px";
-                    content.style.overflow = "hidden";
-                    content.style.transition = "max-height 0.3s ease-in-out";
-        
-                    expandHint.addEventListener("click", (event) => {
-                        event.stopPropagation(); // Prevent event bubbling
-                        const isExpanded = item.classList.contains("expanded");
-        
-                        // Close all other sections before opening a new one
-                        timelineItems.forEach((otherItem) => {
-                            if (otherItem !== item) {
-                                otherItem.classList.remove("expanded");
-                                otherItem.querySelector(".content").style.maxHeight = "0px";
-                            }
-                        });
-        
-                        if (!isExpanded) {
-                            item.classList.add("expanded");
-                            content.style.maxHeight = content.scrollHeight + "px"; // Expands to the height of content
-                        } else {
-                            item.classList.remove("expanded");
-                            content.style.maxHeight = "0px"; // Collapse
-                        }
-                    });
-                });
-            });
-        </script>
 </body>
 </html>
-
