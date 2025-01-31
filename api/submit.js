@@ -1,4 +1,6 @@
-module.exports = async (req, res) => {
+import nodemailer from "nodemailer";
+
+export default async function handler(req, res) {
     // Allow CORS
     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow all domains for now
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
