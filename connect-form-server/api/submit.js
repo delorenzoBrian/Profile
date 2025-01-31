@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
     // Allow CORS
     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow all domains for now
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
