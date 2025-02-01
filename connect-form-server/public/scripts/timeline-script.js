@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         expandHint.addEventListener("click", () => {
             const isExpanded = item.classList.contains("expanded");
-            
-            // Close all expanded items before expanding the clicked one
+
+            // Close all other items before expanding the clicked one
             timelineItems.forEach((otherItem) => {
                 if (otherItem !== item && otherItem.classList.contains("expanded")) {
                     otherItem.classList.remove("expanded");
@@ -22,10 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isExpanded) {
                 item.classList.remove("expanded");
                 details.style.maxHeight = "0";
+                details.style.opacity = "0"; // Hide smoothly
                 arrowIcon.style.transform = "rotate(0deg)";
             } else {
                 item.classList.add("expanded");
                 details.style.maxHeight = details.scrollHeight + "px";
+                details.style.opacity = "1"; // Show smoothly
                 arrowIcon.style.transform = "rotate(180deg)";
             }
         });
