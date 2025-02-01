@@ -355,7 +355,7 @@ header .penguin-graphic {
 
 /* Timeline Content Box */
 .timeline-item .content {
-    background: linear-gradient(135deg, #222, #444); /* Default dark gradient */
+    background: linear-gradient(135deg, #222, #444);
     color: #fff;
     padding: 1.5rem 2rem;
     border-radius: 10px;
@@ -367,8 +367,8 @@ header .penguin-graphic {
 
 /* Expanded Timeline Content - Color Change */
 .timeline-item.expanded .content {
-    background: linear-gradient(135deg, #2a2a2a, #666); /* Lighter shade */
-    color: #ffeb8a; /* Golden text */
+    background: linear-gradient(135deg, #2a2a2a, #666);
+    color: #ffeb8a;
 }
 
 /* Keep summary visible at all times */
@@ -378,16 +378,17 @@ header .penguin-graphic {
 
 /* Details initially hidden */
 .timeline-item .timeline-details {
-    max-height: 0;
+    height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    transition: height 0.4s ease-out, opacity 0.3s ease-out;
     padding-top: 0;
 }
 
 /* Expand smoothly when clicked */
 .timeline-item.expanded .timeline-details {
-    max-height: 300px;
+    height: auto;
+    max-height: 500px; /* Large enough to avoid cut-off */
     opacity: 1;
     padding-top: 1rem;
 }
