@@ -387,6 +387,7 @@ header .penguin-graphic {
 
 /* Expand smoothly when clicked */
 .timeline-item.expanded .timeline-details {
+    height: auto;
     max-height: 500px; /* Large enough to avoid cut-off */
     opacity: 1;
     padding-top: 1rem;
